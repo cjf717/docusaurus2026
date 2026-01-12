@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSV转JSON格式</title>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 5px auto;
+
+      padding: 5px;
+      font-family: Arial, sans-serif;
+    }
+
+    .input-section {
+      margin-bottom: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      /* padding: 20px; */
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      /* margin: 10px 0; */
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    pre {
+      width: 100%;
+      max-height: 150px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      padding: 15px;
+      background-color: #f5f5f5;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>CSV转JSON格式</h2>
+    <div class="input-section">
+      <p>请输入CSV格式的文本内容：</p>
+      <input type="file" id="fileInput" accept=".csv" onchange="loadFile(event)">
+      <div>
+        包含分隔符号：
+        <label for="hasCommaEN">英文逗号
+          <input type="checkbox" name="hasCommaEN" id="hasCommaEN" checked>
+        </label>
+        <label for="hasCommaCN">中文逗号
+          <input type="checkbox" name="hasCommaCN" id="hasCommaCN">
+        </label>
+        <label for="hasIndent">缩进符
+          <input type="checkbox" name="hasIndent" id="hasIndent">
+        </label>
+      </div>
+      <textarea id="csvInput">name,age,city
+张三,25,北京
+李四,30,上海
+王五,28,广州</textarea>
+    </div>
+    <div>
+      <button onclick="convertToJson()">转换为JSON（标准格式）</button>
+      <button onclick="convertToJson(0)">转换为JSON（不缩进）</button>
+      <h3>转换结果：</h3>
+      <pre id="jsonOutput"></pre>
+      <div><button onclick="saveJson()">保存为文件</button></div>
+    </div>
+
+    <script>
+      function csvToJson(csv) {
+        const keywords = [];
+        // 检查是否包含分隔符号
+        const hasCommaEN = document.getElementById('hasCommaEN').checked;
+        const hasCommaCN = document.getElementById('hasCommaCN').checked;
+        const hasIndent = document.getElementById('hasIndent').checked;
+        if (hasCommaEN) {
+          keywords.push(',');
+        }
+        if (hasCommaCN) {
+          keywords.push('，');
+        }
+        if (hasIndent) {
+          keywords.push('\t');
+        }
+        const regex = new RegExp(keywords.join('|'), 'i')
+        // 将CSV文本按行分割
+        const lines = csv.trim().split('\n');
+
+        // 获取表头（字段名）
+        const headers = lines[0].split(regex).map(header => header.trim());
+
+        // 转换数据行
+        const result = [];
+        for (let i = 1; i < lines.length; i++) {
+          const obj = {};
+          const currentLine = lines[i].split(regex);
+
+          for (let j = 0; j < headers.length; j++) {
+            // 移除可能存在的引号和空格
+            obj[headers[j]] = currentLine[j] ? currentLine[j].trim().replace(/["']/g, '') : '';
+          }
+          result.push(obj);
+        }
+        return result;
+      }
+
+      function convertToJson(space = 2) {
+        const csvInput = document.getElementById('csvInput').value;
+        try {
+          const jsonResult = csvToJson(csvInput);
+          document.getElementById('jsonOutput').textContent =
+            JSON.stringify(jsonResult, null, space);
+        } catch (error) {
+          document.getElementById('jsonOutput').textContent =
+            '转换错误：' + error.message;
+        }
+      }
+      function loadFile(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById('csvInput').value = e.target.result;
+          };
+          reader.readAsText(file);
+        }
+      }
+      function saveJson() {
+        const jsonOutput = document.getElementById('jsonOutput').textContent;
+        const blob = new Blob([jsonOutput], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'output.json';
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+    </script>
+</body>
+
+</html>

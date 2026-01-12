@@ -6,7 +6,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "创梦2026",
-  tagline: "Dinosaurs are cool",
+  tagline: "创梦的天空，自由翱翔，2026",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -44,7 +44,8 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           remarkPlugins: [require("remark-breaks")],
-          editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl:
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
@@ -54,7 +55,8 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl:
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
@@ -101,6 +103,17 @@ const config: Config = {
         },
         { to: "/blog", label: "博客", position: "left" },
         { to: "/post", label: "文章", position: "left" },
+        { to: "/player", label: "播放器", position: "left" },
+        {
+          href: "https://docusaurus.io/zh-CN/",
+          label: "官方文档",
+          position: "right",
+        },
+        {
+          href: "https://docusaurus.nodejs.cn/",
+          label: "民间文档",
+          position: "right",
+        },
         {
           href: "https://github.com/facebook/docusaurus",
           label: "GitHub",
@@ -161,3 +174,4 @@ const config: Config = {
 };
 
 export default config;
+

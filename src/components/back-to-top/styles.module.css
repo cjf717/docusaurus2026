@@ -1,0 +1,16 @@
+.container {
+  background-color: #f2f2f5;
+  position: fixed;
+  bottom: 20%;
+  margin-bottom: 20px;
+  right: 15px;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 999px;
+}
