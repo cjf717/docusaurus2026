@@ -2,10 +2,11 @@
 title: Windows 11/10正式版官方原版镜像
 date: 2023-02-02 15:12:03
 categories: 系统
-tags:
+# tags: [windows, win10, win11]
+tags: 
   - windows
-  - win10
-  - win11
+  # - win10
+  - Win10
 cover: images/windows.webp
 ---
 

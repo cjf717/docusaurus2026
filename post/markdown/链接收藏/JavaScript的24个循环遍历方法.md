@@ -2,9 +2,7 @@
 title: JavaScript的24个循环遍历方法
 date: 2023-02-01 10:17:19
 categories: 编程
-tags:
-  - JavaScript
-  - 前端
+tags: [JavaScript, 前端]
 cover: /images/24个JavaScript循环遍历方法.png
 ---
 

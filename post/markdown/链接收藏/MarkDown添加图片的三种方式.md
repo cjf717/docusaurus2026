@@ -2,8 +2,7 @@
 title: MarkDown添加图片的三种方式
 date: 2023-02-01 15:37:56
 categories: 编程
-tags: 
-  - markdown
+tags: [markdown]
 cover: https://file.crazywong.com/gh/jerryc127/butterfly_cdn@2.1.0/top_img/index.jpg
 ---
 

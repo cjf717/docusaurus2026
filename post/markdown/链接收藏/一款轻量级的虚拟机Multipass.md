@@ -2,12 +2,10 @@
 title: 一款轻量级的虚拟机Multipass
 date: 2023-02-14 09:31:51
 categories: 系统
-tags: 
-  - ubuntu
-  - 虚拟机
+tags: [ubuntu, 虚拟机]
 cover: Multipass官网界面.png
 ---
-
+![Multipass官网界面](一款轻量级的虚拟机Multipass/Multipass官网界面.png)
 ## 前言
 
 虚拟机的 VMware 功能很多很强大，可以非常方便的修改虚拟机的配置，让虚拟机达到自己想要的性能～～
