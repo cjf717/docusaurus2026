@@ -1,6 +1,6 @@
 import React, { use, useEffect, useState } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
-import "APlayer/dist/APlayer.min.css";
+// import "APlayer/dist/APlayer.min.css";
 
 const ReactAplayerComponent = ({ audio = {} }) => {
   // const [options, setOptions] = useState({
