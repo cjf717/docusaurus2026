@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import Layout from "@theme/Layout";
-import RadioFoshan from "@site/src/views/player/radio-foshan";
+import RadioFoshan from "@site/src/base-ui/player/radio-foshan";
 
 const RadioFoshanHome = memo(() => {
   return (

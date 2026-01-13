@@ -21,11 +21,13 @@
     "@mdx-js/react": "^3.0.0",
     "aplayer": "^1.10.1",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-sass": "^0.2.6",
     "hls.js": "^1.6.15",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "remark-breaks": "^4.0.0"
+    "remark-breaks": "^4.0.0",
+    "sass": "^1.97.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.2",

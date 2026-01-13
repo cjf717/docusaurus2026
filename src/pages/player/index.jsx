@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import Layout from "@theme/Layout";
-import PlayerHome from "@site/src/views/player/";
+import PlayerHome from "@site/src/base-ui/player";
 
 const index = memo(() => {
   return (

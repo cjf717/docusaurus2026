@@ -80,6 +80,7 @@ const config: Config = {
         // ... other options
       },
     ],
+    "docusaurus-plugin-sass",
   ],
 
   themeConfig: {
@@ -104,6 +105,7 @@ const config: Config = {
         { to: "/blog", label: "博客", position: "left" },
         { to: "/post", label: "文章", position: "left" },
         { to: "/player", label: "播放器", position: "left" },
+        { to: "/demo", label: "测试", position: "left" },
         {
           href: "https://docusaurus.io/zh-CN/",
           label: "官方文档",

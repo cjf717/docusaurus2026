@@ -21,6 +21,9 @@ function PlayerPageHome() {
             <a href={useBaseUrl("player/qtfm")}>蜻蜓FM</a>
           </li>
           <li>
+            <a href={useBaseUrl("player/ximalaya")}>喜马拉雅</a>
+          </li>
+          <li>
             <a href={"http://www.fm0758.com/fm/"}>怀集音乐之声-官方直播</a>
           </li>
         </ul>
