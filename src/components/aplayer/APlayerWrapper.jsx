@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import PropTypes from "prop-types";
-// import "APlayer/dist/APlayer.min.css";
+import "aplayer/dist/APlayer.min.css";
+// import styles from "./styles.module.css";
 import Hls from "hls.js";
 
 const APlayerWrapper = ({ apInstance }) => {
